@@ -4,7 +4,7 @@ class Tarea:
         self.id     = id
         self.estado = estado
 
-    
+    #Método CRUD
     def delete(self):
         pass
 
