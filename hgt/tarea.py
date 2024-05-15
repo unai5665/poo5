@@ -5,5 +5,13 @@ class Tarea:
         self.estado = estado
 
     
-    def create(self)
+    def delete(self):
+        pass
+
+    def update(self):
+        pass
+
+    def read(self):
+        pass
+
         
