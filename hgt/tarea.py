@@ -6,12 +6,13 @@ class Tarea:
 
     #Método CRUD
     def delete(self):
-        pass
+       self.estado = False
 
-    def update(self):
-        pass
+    
+    def update(self, nueva_tarea:str):
+        self.tarea = nueva_tarea
 
+    
     def read(self):
-        pass
-
+        return self.tarea
         
