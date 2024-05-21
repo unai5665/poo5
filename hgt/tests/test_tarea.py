@@ -1,16 +1,17 @@
 import pytest
-from .test_tarea import Tarea
+from tarea import Tarea
 
-def test_tarea():
-    tarea = Tarea("Hacer la tarea", True, "1")
+@pytest.fixture
+def tarea():
+    return Tarea("Tarea1", True, 1)
+
+def test_tarea_read(tarea):
+     assert tarea.read() == "Tarea1, True, 1"
+
+def test_tarea_update(tarea):
+    tarea.update("Tarea2", False, 6)
+    assert tarea.reas() == "Tarea1, False, 6"
     
-    
-    assert tarea.read() == "Hacer la tarea"
-    
-    
-    tarea.update("Tarea hecha")
-    assert tarea.read() == "Tarea hecha"
-    
-   
+def test_tarea_delete(tarae):    
     tarea.delete()
-    assert tarea.estado == False
+    assert tarea.read == "None, None, None"
