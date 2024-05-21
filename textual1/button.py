@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, VerticalScroll
-from textual.widgets import Button, Static
+from textual.widgets import Button, Static, Footer
 
 
 class ButtonsApp(App[str]):
@@ -9,25 +9,21 @@ class ButtonsApp(App[str]):
     def compose(self) -> ComposeResult:
         yield Horizontal(
             VerticalScroll(
-                Static("Standard Buttons", classes="header"),
-                Button("Default"),
-                Button("Primary!", variant="primary"),
-                Button.success("Success!"),
-                Button.warning("Warning!"),
-                Button.error("Error!"),
+                Static("", classes="header"),
+                Button("Saludar", id="butSaludar"),
+                
             ),
             VerticalScroll(
-                Static("Disabled Buttons", classes="header"),
-                Button("Default", disabled=True),
-                Button("Primary!", variant="primary", disabled=True),
-                Button.success("Success!", disabled=True),
-                Button.warning("Warning!", disabled=True),
-                Button.error("Error!", disabled=True),
+                Static("", classes="footer"),
+                Button("Salir", id="butSalir"),
+                
             ),
         )
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(str(event.button))
+        if 
+        
 
 
 if __name__ == "__main__":
