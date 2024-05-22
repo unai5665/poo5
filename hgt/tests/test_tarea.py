@@ -10,8 +10,8 @@ def test_tarea_read(tarea):
 
 def test_tarea_update(tarea):
     tarea.update("Tarea2", False, 6)
-    assert tarea.reas() == "Tarea1, False, 6"
+    assert tarea.read() == "Tarea1, False, 6"
     
-def test_tarea_delete(tarae):    
+def test_tarea_delete(tarea):    
     tarea.delete()
     assert tarea.read == "None, None, None"
